@@ -1,42 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-    <title>Arrefecimento Simulado</title>
-        {{includeCSS(path="www/style.css")}}
+        <title>Arrefecimento Simulado</title>
+        {{includeCSS("www/style.css") }}
         {{ bootstrapLib()}}
         {{ headContent() }}
     </head>
+    <body class="corpo">
         <nav class="navbar navbar-default navbar-fixed-top navega">
+            <span class="navbar-brand">MINHA MARCA</span>
             <div class="container">
                 <ul class="nav navbar-nav">
-                    <li data-toggle="tab"> <a href="#ini" >Início</a> </li>
+                    <li class="active" data-toggle="tab"> <a href="#ini" >Início</a> </li>
                     <li data-toggle="tab"> <a href="#ini" >Análises e Resultados </a> </li> 
                     <li data-toggle="tab" class="selected"><a href="#ini" >Dados </a> </li>
                     <li data-toggle="tab"> <a class="dropdown" href="#t">Sobre nós </a> </li>
                 </ul>
             </div>
         </nav>
+        
         <div class="container tab">
-            <ul class="nav nav-pills">
-                <li class="active"><a data-toggle = "tab" href="#1">Tabelas</a></li>
-                <li><a data-toggle="tab" href="#2">Graficos</a></li>
-                <li><a href="#3">Análises</a></li>
-                <li><a href="#4">Resultados</a></li>
+            <ul class="nav nav-tabs tab" >
+                <li class="active"><a data-toggle = "tab" href="#1">Painel</a></li>
+                <li><a data-toggle = "tab" href="#2">Graficos</a></li>
+                <li><a data-toggle = "tab" href="#3">Análises</a></li>
+                <li><a data-toggle = "tab" href="#4">Resultados</a></li>
             </ul>
-            <div class="tab-content clearfix">
+
+            <div class="tab-content clearfix content">
+                <div class="navigation rpanel">
+                    <h4>Painel</h4>
+                    <hr/>
+                </div>
 			          <div class="tab-pane active" id="1">
-                    {{ tab1 }}
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-5 panelr tab">
+                                {{ pizza }}
+                            </div>
+                            <div class="col-lg-5 panell ">
+                                {{grafico2}}
+                            </div>
+                        </div>
+                    </div>
 				        </div>
 
-                <div class="tab-pane tab" id="2">
-                    {{button}}
-                    {{ slider }}
-                    {{ textinpt }}
-                    {{ seletor }}
+                <div class="tab-pane" id="2">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4 centro tab">  
+                                {{tab1}}
+                            </div>
+                        </div>
+                    </div>    
                 </div>
+
+                <div class="tab-pane tab" id="3">
+                    <h1>Aba 3</h1>
+                </div>
+
+                <div class="tab-pane tab" id="4">
+                    <h1>Aba 4</h1>
+                </div>
+
             </div>
         </div>
-        <div class="navbar navbar-fixed-bottom rodape navbar-default">
+        <nav class="navbar navbar-nav navbar-default navbar-fixed-bottom">
+            
+        </nav>
         </div>
     </body>  
 </html>
