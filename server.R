@@ -18,7 +18,6 @@ tema <- theme(
 
 )
 
-
 function(input, output){
   data(mtcars)
   output$reativo <- renderPlotly({
@@ -27,8 +26,19 @@ function(input, output){
       ggtitle("Diagrama de Dispersao")+
       stat_smooth(method=lm,se=F)+
       tema
-    
-    gp <- ggplotly() %>% config(collaborate=FALSE, cloud=FALSE, displaylogo=FALSE, modeBarButtonsToRemove=c("select2d", "sendDataToCloud", "pan2d", "resetScale2d", "hoverClosestCartesian", "hoverCompareCartesian", "lasso2d", "zoomIn2d", "zoomOut2d"))
+    gp <- ggplotly() %>% 
+            config(collaborate=FALSE,
+                   cloud=FALSE, 
+                   displaylogo=FALSE, 
+                   modeBarButtonsToRemove=c("select2d", 
+                                            "sendDataToCloud",
+                                            "pan2d",
+                                            "resetScale2d",
+                                            "hoverClosestCartesian",
+                                            "hoverCompareCartesian",
+                                            "lasso2d",
+                                            "zoomIn2d",
+                                            "zoomOut2d"))
     gp <- layout(gp, margin=list(t = 100))
     gp
   })
